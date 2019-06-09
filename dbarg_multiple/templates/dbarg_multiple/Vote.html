@@ -1,0 +1,68 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Match {{ subsession.match_number }}, Round {{ subsession.round_in_match_number }} &ndash; Your Vote
+{% endblock %}
+
+{% block content %}
+    <p> You are <font color="red"><b>Member {{ player.id_in_group }}</b></font>.</p>
+
+    <p>The proposer in this Round was Member {{ group.proposer }}.</p>
+
+    <p>This is the status quo allocation:</p>
+        <table cellpadding="12" cellspacing="12">
+        <tr>
+            <td align="center"valign="center">Member 1</td>
+            <td align="center"valign="center">Member 2</td>
+            <td align="center"valign="center">Member 3</td>
+        </tr>
+          <tr>
+            <td align="center"valign="center">{{ group.sq_to_1 }}</td>
+            <td align="center"valign="center">{{ group.sq_to_2 }}</td>
+            <td align="center"valign="center">{{ group.sq_to_3 }}</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <p>This is the allocation proposed by the proposer:</p>
+    <table cellpadding="12" cellspacing="12">
+        <tr>
+            <td align="center"valign="center">Member 1</td>
+            <td align="center"valign="center">Member 2</td>
+            <td align="center"valign="center">Member 3</td>
+        </tr>
+        <tr>
+            <td>{{ group.chosen_offer_to_1 }}</td>
+            <td>{{ group.chosen_offer_to_2 }}</td>
+            <td>{{ group.chosen_offer_to_3 }}</td>
+        </tr>
+    </table>
+    <br>
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 400px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(odd) {
+  background-color: #dddddd;
+}
+</style>
+{% endblock %}

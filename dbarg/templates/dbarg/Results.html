@@ -1,0 +1,75 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Round {{ subsession.round_number }} &ndash; Results
+{% endblock %}
+
+{% block content %}
+    <p> You are <font color="red"><b>Member {{ player.id_in_group }}</b></font>.</p>
+    <p>The proposer in this Round was Member {{ group.proposer }}.</p>
+
+    <p>These were the votes in this Round:</p>
+    <table>
+        <tr>
+            <td align="center"valign="center">Member 1</td>
+            <td align="center"valign="center">Member 2</td>
+            <td align="center"valign="center">Member 3</td>
+        </tr>
+          <tr>
+            <td align="center"valign="center">{{ vote1 }}</td>
+            <td align="center"valign="center">{{ vote2 }}</td>
+            <td align="center"valign="center">{{ vote3 }}</td>
+        </tr>
+    </table>
+    <br>
+
+    <p>
+    {% if group.outcome == "Proposal" and Constants.veto == True %} Since the proposal received the support of the veto player and at least one other member, it defeated the status quo.
+    {% elif group.outcome == "Status Quo" and Constants.veto == True %} Since the proposal did not receive the support of the veto player and at least one other member, it did not defeat the status quo.
+    {% elif group.outcome == "Status Quo" and Constants.veto == False %} Since the proposal did not receive the support of at least one other member, it did not defeat the status quo.
+    {% elif group.outcome == "Proposal" and Constants.veto == False %} Since the proposal received the support of at least one other member, it defeated the status quo.
+    {% endif %}
+    </p>
+
+    <p>This is the outcome in this Round:</p>
+     <table>
+        <tr>
+            <td align="center"valign="center">Member 1</td>
+            <td align="center"valign="center">Member 2</td>
+            <td align="center"valign="center">Member 3</td>
+        </tr>
+          <tr>
+            <td align="center"valign="center">{{ group.allocation_to_1 }}</td>
+            <td align="center"valign="center">{{ group.allocation_to_2 }}</td>
+            <td align="center"valign="center">{{ group.allocation_to_3 }}</td>
+        </tr>
+    </table>
+    <br>
+
+    {% next_button %}
+{% endblock %}
+
+{% block styles %}
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 400px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(odd) {
+  background-color: #dddddd;
+}
+
+.otree-timer {
+    display: none;
+}
+</style>
+{% endblock %}

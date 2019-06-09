@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Round {{ subsession.round_number }} &ndash; End of Round
+{% endblock %}
+
+{% block content %}
+    <p> The computer rolled a 100-sided die to determine whether the match is over or continues to another round.</p>
+    {% if subsession.round_number < Constants.num_rounds %}
+        <p>The die roll was less than or equal to {{ Constants.die_roll_threshold }}.</p>
+        <p>This means that the game continues to another round of the same match.</p>
+    {% elif subsession.round_number == Constants.num_rounds %}
+        <p>The die roll was greater than {{ Constants.die_roll_threshold }}.</p>
+        <p>This means that the match is over.</p>
+    {%  endif %}
+
+
+    {% next_button %}
+
+{% endblock %}
+
+{% block styles %}
+    <style>
+
+.otree-timer {
+    display: none;
+}
+    </style>
+{% endblock %}
+
