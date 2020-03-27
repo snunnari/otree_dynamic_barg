@@ -1,2 +1,2 @@
-otree>=2.1.39
-otree_tools>=1.1.15
+otree>=2.5.5
+numpy>=1.18.1
