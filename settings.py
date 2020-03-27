@@ -69,8 +69,8 @@ Here are some oTree games.
 SECRET_KEY = 'v14v0!%le2n303c#d7^odz_4fd9_y%%we8wvy@s6-4e==s%ffr'
 
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
-#INSTALLED_APPS = ['otree']
-INSTALLED_APPS = ['otree', 'otree_tools']
-EXTENSION_APPS = ['otree_tools']
+INSTALLED_APPS = ['otree']
+#INSTALLED_APPS = ['otree', 'otree_tools']
+#EXTENSION_APPS = ['otree_tools']
 
 # inactive session configs
