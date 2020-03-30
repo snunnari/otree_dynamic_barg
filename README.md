@@ -9,3 +9,7 @@ as in the experiments by Battaglini, Marco and Thomas R. Palfrey, 2012, "The Dyn
 * **dbarg_multiple**: dynamic legislative bargaining with three players and endogenous status quo as in the experiments by Battaglini, Marco and Thomas R. Palfrey, 2012, "The Dynamics of Distributive Politics" and Nunnari, 2019, "Veto Power in Standing Committees: An Experimental Study". This app implements multiple instances of an infinitely repeated game (i.e., multiple "matches").
 
 These apps were developed with oTree version 2.1.35.
+
+Last updated on March, 30 2020.
+
+Demo: http://dynamic-barg.herokuapp.com/demo/
