@@ -20,7 +20,7 @@ This app implements multiple instances of an infinitely repeated game (i.e., mul
 class Constants(BaseConstants):
     name_in_url = 'dbarg_multiple'
     players_per_group = 3
-    match_duration = np.random.geometric(p=1,size=720) # the first argument here is the probability the match ends after each round (i.e., 1 - \delta); the second argument is the number of matches. For documentation, see: https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.geometric.html
+    match_duration = np.random.geometric(p=0.25, size=10) # the first argument here is the probability the match ends after each round (i.e., 1 - \delta); the second argument is the number of matches. For documentation, see: https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.geometric.html
     num_rounds = np.sum(match_duration)
     last_rounds = np.cumsum(match_duration)
     first_rounds = [1]
