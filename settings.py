@@ -15,13 +15,13 @@ SESSION_CONFIG_DEFAULTS = {
 SESSION_CONFIGS = [
     {
         'name': 'dbarg',
-        'display_name': "Dynamic Bargaining with Endogenous Status Quo (N=3) - Single Match",
+        'display_name': "Dynamic Bargaining with Endogenous Status Quo (1 Group, 1 Match)",
         'num_demo_participants': 3,
         'app_sequence': ['dbarg']
     },
     {
         'name': 'dbarg_multiple',
-        'display_name': "Dynamic Bargaining with Endogenous Status Quo (N=3) - Multiple Matches",
+        'display_name': "Dynamic Bargaining with Endogenous Status Quo (1 Group, 10 Matches)",
         'num_demo_participants': 3,
         'app_sequence': ['dbarg_multiple']
     }
