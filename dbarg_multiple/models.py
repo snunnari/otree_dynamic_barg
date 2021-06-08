@@ -103,7 +103,7 @@ class Subsession(BaseSubsession):
                     nonveto_players.pop(),
                 ]
                 group_matrix.append(new_group)
-            self.set_groups(group_matrix)
+            self.set_group_matrix(group_matrix)
 
             groups = self.get_groups()
             for g in groups:
