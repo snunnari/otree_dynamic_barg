@@ -11,5 +11,3 @@ as in the experiments by Battaglini, Marco and Thomas R. Palfrey, 2012, "The Dyn
 These apps were developed with oTree version 2.1.35.
 
 Last updated on March, 30 2020.
-
-Demo: http://dynamic-barg.herokuapp.com/demo/
